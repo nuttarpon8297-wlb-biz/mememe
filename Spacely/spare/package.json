@@ -1,0 +1,14 @@
+{
+  "name": "spacely-automated-test-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    
+    "test:b2c-space-generator": "newman run postman/dev/testscript/b2c-space-generator-pro-plan-success.postman_collection.json -e postman/dev/environment/b2c.postman_environment.json -d postman/dev/datatest/b2c-users-proplan.json --env-var url=$URL"
+    
+  },
+  "author": "",
+  "license": "ISC"
+}
