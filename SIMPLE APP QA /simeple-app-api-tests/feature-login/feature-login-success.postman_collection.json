@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "b38f1d42-f9a7-4258-a204-734d3f918360",
+		"name": "feature-login-success",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28179557"
+	},
+	"item": [
+		{
+			"name": "เข้าสู่ระบบ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"ตรวจสอบชื่อผู้ใช้ = 7G020022\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userName).to.eql(\"7G020022\");",
+							"});",
+							"",
+							"pm.test(\"ตรวจสอบชื่อผู้ใช้ = สิริกัญญา\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.firstNameTh).to.eql(\"สิริกัญญา\");",
+							"});",
+							"",
+							"var token = pm.response.json().accessToken;",
+							"pm.collectionVariables.set(\"accessToken\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"7G020022\",\n    \"password\": \"@Krungsri002\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงเมนูที่สามารถทำงานได้",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"serviceCode = 0\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(0);",
+							"});",
+							"",
+							"pm.test(\"journeyName = เริ่มเปิดบัญชี\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.journeys[0].journeyName).to.eql(\"เริ่มเปิดบัญชี\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"role\": \"BW/STLA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/journeys/get-journeys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"journeys",
+						"get-journeys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงข้อความเปราะบาง",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"serviceCode = 0\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(0);",
+							"});",
+							"pm.test(\"ลักษณะลูกค้าเปราะบาง\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.fragile[0].title).to.eql(\"ลักษณะลูกค้าเปราะบาง\");",
+							"});",
+							"",
+							"pm.test(\"อายุตั้งแต่ 60 ปี ขึ้นไป มีความรู้ทางการเงินอย่างจำกัด ไม่มีประสบการณ์การใช้ผลิตภัณฑ์ เป็นผู้บกพร่องทางกายหรือมีข้อจำกัดในการสื่อสาร\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.fragile[0].text[0]).to.eql(\"อายุตั้งแต่ 60 ปี ขึ้นไป\");",
+							"});",
+							"",
+							"pm.test(\"การให้บริการ\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.fragile[1].title).to.eql(\"การให้บริการ\");",
+							"});",
+							"",
+							"pm.test(\"แนะนำช้าๆ ให้ชัดเจนและเข้าใจ สอบถามความต้องการในการให้ผู้ใกล้ชิดร่วมรับฟังข้อมูล ให้ผู้จัดการหรือหัวหน้างานร่วมรับฟังการนำเสนอผลิตภัณฑ์ สำหรับผลิตภัณฑ์กองทุนและประกัน ให้แจ้งเตือนช้อควรระวังต่างๆ\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.fragile[1].text[0]).to.eql(\"แนะนำช้าๆ ให้ชัดเจนและเข้าใจ\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"7G020022\",\n    \"password\": \"@Krungsri002\",\n    \"role\": \"BW/STLA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/config/fragile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"config",
+						"fragile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "สร้างไอดีเพื่อจัดเก็บข้อมูล",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status create Work Item ID is Success\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Stage = 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.stage).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Work Item ID = 153265\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.itemId).to.eql(\"153265\");",
+							"});",
+							"",
+							"pm.test(\"User ID maker = 7G020022\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.maker).to.eql(\"1xxxx\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"7G020022\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/work-item/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"work-item",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "accessToken",
+			"value": ""
+		}
+	]
+}

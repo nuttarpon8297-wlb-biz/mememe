@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "6278dd6f-e7eb-4c69-a0fd-3c32d974044e",
+		"name": "feature-ตรวจสอบdopa-success",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28179557"
+	},
+	"item": [
+		{
+			"name": "เข้าสู่ระบบ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"ตรวจสอบชื่อผู้ใช้ = 7G020022\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userName).to.eql(\"7G020022\");",
+							"});",
+							"",
+							"pm.test(\"ตรวจสอบชื่อผู้ใช้ = สิริกัญญา\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.firstNameTh).to.eql(\"สิริกัญญา\");",
+							"});",
+							"",
+							"var token = pm.response.json().accessToken;",
+							"pm.collectionVariables.set(\"accessToken\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"7G020022\",\n    \"password\": \"@Krungsri002\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงเมนูที่สามารถทำงานได้",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"serviceCode = 0\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(0);",
+							"});",
+							"",
+							"pm.test(\"journeyName = เริ่มเปิดบัญชี\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.journeys[0].journeyName).to.eql(\"เริ่มเปิดบัญชี\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"role\": \"BW/STLA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/journeys/get-journeys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"journeys",
+						"get-journeys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "สร้างไอดีเพื่อจัดเก็บข้อมูล",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status create Work Item ID is Success\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Stage = 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.stage).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Work Item ID = 153265\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.itemId).to.eql(\"153265\");",
+							"});",
+							"",
+							"pm.test(\"User ID maker = 7G020022\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.maker).to.eql(\"1xxxx\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"7G020022\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/work-item/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"work-item",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ตรวจสอบ-dopa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"serviceCode = 2xx101E00\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(\"2xx101E00\");",
+							"});",
+							"pm.test(\"serviceMessage = สถาณะบัตรปกติ\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceMessage).to.eql(\"สถาณะบัตรปกติ\");",
+							"});",
+							"pm.test(\"identificationVerification = SUCC\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.dopaVerify.identificationVerification).to.eql(\"SUCC\");",
+							"});",
+							"pm.test(\"expiredCardIndicator = false\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.dopaVerify.expiredCardIndicator).to.eql(false);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"itemId\": 153265,\n  \"identificationNumber\": \"1101401845093\",\n  \"chipInformation\": {\n    \"smartCardNumber\": \"10994078533\",\n    \"petitionDocumentNumber\": \"6300c10e142f2698\"\n  },\n  \"cardInformation\": {\n    \"firstName\": \"ณัฐพนธ์\",\n    \"lastName\": \"ยาคะธรรม\",\n    \"birthDate\": \"25400119\",\n    \"laserId\": \"JT0123456789\"\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/dopa/verify",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"dopa",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "accessToken",
+			"value": ""
+		}
+	]
+}

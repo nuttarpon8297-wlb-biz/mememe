@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "8743a484-37b0-43b4-948e-027bd745092e",
+		"name": "signature-drawer-success",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28318159"
+	},
+	"item": [
+		{
+			"name": "แสดงอีเมลและที่อยู่",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"productName=เงินฝาก\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountInfo[0].productName).to.eql(\"เงินฝาก\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"productType = เงินฝากออมทรัพย์\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountInfo[0].productType).to.eql(\"เงินฝากออมทรัพย์\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"accountType = ออมทรัพย์ทั่วไป\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountInfo[0].accountType).to.eql(\"ออมทรัพย์ทั่วไป\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"house_no = 999/99\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountInfo[0].address.house_no).to.eql(\"999/99\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"subDistrict = คลองเตยเหนือ\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountInfo[0].address.subDistrict).to.eql(\"คลองเตยเหนือ\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"district = วัฒนา\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountInfo[0].address.district).to.eql(\"วัฒนา\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"province = กทม\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountInfo[0].address.province).to.eql(\"กทม\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"postalCode = 10100\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountInfo[0].address.postalCode).to.eql(\"10100\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemId\": 153265\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/get-account-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"get-account-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "สร้างเลขบัญชี",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"serviceCode=0\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.serviceCode).to.eql(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"status=success\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"itemId\": 153265\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/generate-account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"generate-account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงรายการบัญชีที่สมัครไว้ตาม-workitem",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//บัณชีที่1\r",
+							"pm.test(\"seq = 1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[0].seq).to.eql(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"acctTypeName = ออมทรัพย์ทั่วไป\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[0].acctTypeName).to.eql(\"ออมทรัพย์ทั่วไป\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"acctNo = 052015235\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[0].acctNo).to.eql(\"052015235\");\r",
+							"});\r",
+							"\r",
+							"//บัณชีที่2\r",
+							"pm.test(\"seq = 2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[1].seq).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"acctTypeName = ออมทรัพย์ทั่วไป\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[1].acctTypeName).to.eql(\"ออมทรัพย์ทั่วไป\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"acctNo = 0620152563\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[1].accountNo).to.eql(\"0620152563\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"//บัณชีที่3\r",
+							"\r",
+							"pm.test(\"seq = 3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[2].seq).to.eql(3);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"acctTypeName = ออมทรัพย์ทั่วไป\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[2].acctTypeName).to.eql(\"ออมทรัพย์ทั่วไป\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"acctNo = 0220152562\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[2].acctNo).to.eql(\"0220152562\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemId\": 153265\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/get-account-info2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"get-account-info2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "บันทึกลายเซ็น",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"flagAll=Y\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.signResponse.flagAll).to.eql(\"Y\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"signStatus=Y\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.signResponse.signStatus).to.eql(\"Y\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workitemId\": 153265,\r\n    \"hash\": 1,\r\n    \"flagAll\": \"Y\",\r\n    \"signImg\": \"base64\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/product-signature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"product-signature"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงรายการบัญชีและลายเซ็นที่สมัครไว้ตาม-workitem",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"accountNo=052-0-1523-5\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[0].accountNo).to.eql(\"052-0-1523-5\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"pictureSignature=base64\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[0].pictureSignature).to.eql(\"base64\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"accountNo=052-0-1523-5\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[1].accountNo).to.eql(\"052-0-1523-6\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"pictureSignature=base64\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[1].pictureSignature).to.eql(\"base64\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"accountNo=062-0-15256-3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[2].accountNo).to.eql(\"062-0-15256-3\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"pictureSignature=base64\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.accountList[2].pictureSignature).to.eql(\"base64\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemId\": 153265\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/get-account-info3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"get-account-info3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "สมัครผลิตภัณฑ์",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"productRegisterStatus=Success\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.productRegisterStatus).to.eql(\"Success\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemId\": 153265\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

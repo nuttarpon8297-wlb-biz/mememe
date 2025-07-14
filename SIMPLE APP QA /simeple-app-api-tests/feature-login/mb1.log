@@ -1,0 +1,6 @@
+{"level":"info","message":"[mb:2525] mountebank v2.9.1 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2023-10-27T01:54:26.209Z"}
+{"level":"info","message":"[mb:2525] PUT /imposters","timestamp":"2023-10-27T01:54:26.232Z"}
+{"level":"info","message":"[http:8080 login] Open for business...","timestamp":"2023-10-27T01:54:26.241Z"}
+{"level":"info","message":"[http:8080 login] ::1:49342 => POST /oauth/login","timestamp":"2023-10-27T01:54:31.317Z"}
+{"level":"info","message":"[http:8080 login] ::1:49349 => POST /api/v1/journeys/get-journeys","timestamp":"2023-10-27T01:54:38.423Z"}
+{"level":"info","message":"[http:8080 login] ::1:49352 => POST /api/v1/config/fragile","timestamp":"2023-10-27T01:54:41.350Z"}

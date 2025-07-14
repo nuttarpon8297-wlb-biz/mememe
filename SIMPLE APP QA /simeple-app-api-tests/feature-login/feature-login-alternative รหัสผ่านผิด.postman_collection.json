@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "fed8fb22-0c76-49fc-9c4b-a6e627ef76be",
+		"name": "feature-login-alternative รหัสผ่านผิด",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28179557"
+	},
+	"item": [
+		{
+			"name": "เข้าสู่ระบบ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							"pm.test(\"servicecode = 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"serviceMessage = รหัสผ่านไม่ถูกต้อง\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceMessage).to.eql(\"รหัสผ่านไม่ถูกต้อง\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"21145745\",\n    \"password\": \"@Krungsri12\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "ccb9d2df-f5eb-423e-952b-db2edb281220",
+		"name": "feature-login-alternative User ถูกล็อค",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28179557"
+	},
+	"item": [
+		{
+			"name": "เข้าสู่ระบบ ครั้งที่ 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							"pm.test(\"servicecode = 410514E01\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(\"410514E01\");",
+							"});",
+							"",
+							"pm.test(\"serviceMessage = invalidUsernameAndPassword\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceMessage).to.eql(\"invalidUsernameAndPassword\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri1\"\n},\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri19\"\n},\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri16\"\n}\n]\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "เข้าสู่ระบบ ครั้งที่ 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							"pm.test(\"servicecode = 410514E01\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(\"410514E01\");",
+							"});",
+							"",
+							"pm.test(\"serviceMessage = invalidUsernameAndPassword\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceMessage).to.eql(\"invalidUsernameAndPassword\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri1\"\n},\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri19\"\n},\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri16\"\n}\n]\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "เข้าสู่ระบบ ครั้งที่ 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"",
+							"pm.test(\"serviceCode = 411514E02\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(\"411514E02\");",
+							"});",
+							"pm.test(\"serviceMessage = userLocked\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceMessage).to.eql(\"userLocked\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri1\"\n},\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri19\"\n},\n {\n    \"username\": \"21145722\",\n    \"password\": \"@Krungsri16\"\n}\n]\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

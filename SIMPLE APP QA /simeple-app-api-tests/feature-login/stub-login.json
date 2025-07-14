@@ -1,0 +1,540 @@
+{
+    "imposters": [
+        {
+            "port": 8080,
+            "protocol": "http",
+            "name": "login",
+            "stubs": [
+                {
+                    "predicates": [ 
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/oauth/login"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "7G020022",
+                                    "password": "@Krungsri002"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "accessToken": "login",
+                                    "userName": "7G020022",
+                                    "prefixNameTh": "นางสาว",
+                                    "prefixNameEn": "Miss",
+                                    "firstNameTh": "สิริกัญญา",
+                                    "lastNameTh": "แสมสุข",
+                                    "firstNameEn": "Sirikanya",
+                                    "lastNameEn": "Seamsuk",
+                                    "role": "BW/STLA",
+                                    "positionEn": "Senior Relationship Manager 7",
+                                    "positionTh": "ผู้จัดการธุรกิจสัมพันธ์อาวุโส 7",
+                                    "branch": "778",
+                                    "email": "",
+                                    "tel": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        },
+                        {
+                            "is": {
+                                "statusCode": 400,
+                                "body": {
+                                    "serviceCode": 1,
+                                    "serviceMessage": "User Password ผิด",
+                                    "serviceDateTime": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                }
+                ,
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/oauth/login"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "21145745",
+                                    "password": "@Krungsri12"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 401,
+                                "body": {
+                                    "serviceCode": "410514E01",
+                                    "serviceMessage": "invalidUsernameAndPassword",
+                                    "serviceDateTime": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/oauth/login"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "21145788",
+                                    "password": "@Krungsri879"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "accessToken": "",
+                                    "userName": "21145788",
+                                    "prefixNameTh": "นางสาว",
+                                    "prefixNameEn": "Miss",
+                                    "firstNameTh": "ไรยา",
+                                    "lastNameTh": "เจริญกาณต์",
+                                    "firstNameEn": "Raiya",
+                                    "lastNameEn": "Jaroenkarn",
+                                    "role": "DBBM",
+                                    "positionEn": "",
+                                    "positionTh": "",
+                                    "branch": "514",
+                                    "email": "",
+                                    "tel": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/oauth/login"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "21145722",
+                                    "password": "@Krungsri1"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 401,
+                                "body": {
+                                    "serviceCode": "410514E01",
+                                    "serviceMessage": "invalidUsernameAndPassword",
+                                    "serviceDateTime": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        },
+                        {
+                            "is": {
+                                "statusCode": 401,
+                                "body": {
+                                    "serviceCode": "410514E01",
+                                    "serviceMessage": "invalidUsernameAndPassword",
+                                    "serviceDateTime": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        },
+                        {
+                            "is": {
+                                "statusCode": 401,
+                                "body": {
+                                    "serviceCode": "411514E02",
+                                    "serviceMessage": "userLocked",
+                                    "serviceDateTime": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/oauth/login"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "21145722",
+                                    "password": "@Krungsri19"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 401,
+                                "body": {
+                                    "serviceCode": 1,
+                                    "serviceMessage": "รหัสผ่านไม่ถูกต้อง",
+                                    "serviceDateTime": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/oauth/login"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "21145722",
+                                    "password": "@Krungsri16"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 401,
+                                "body": {
+                                    "serviceCode": 2,
+                                    "serviceMessage": "บัญชีถูกล็อค",
+                                    "serviceDateTime": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/journeys/get-journeys"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "role": "BW/STLA"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+    
+                                    "serviceCode": 0,
+                                    "serviceMessage":"",
+                                    "serviceDateTime":"",
+                                    "journeys":[
+                                        {
+                                            "id": "1",
+                                            "journeyName": "เริ่มเปิดบัญชี",
+                                            "journeyRoutingName": "productOnBoarding"
+                                        }
+                                    ]
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/journeys/get-journeys"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "role": "DBBM"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 403,
+                                "body": {
+    
+                                    "serviceCode": "412000E01",
+                                    "serviceMessage":"unauthourized",
+                                    "serviceDateTime":"",
+                                    "journeys":[]
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/config/fragile"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "7G020022",
+                                    "password": "@Krungsri002",
+                                    "role":"BW/STLA"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "fragile" : [
+                                        {
+                                            "title": "ลักษณะลูกค้าเปราะบาง",
+                                            "text": [
+                                                "อายุตั้งแต่ 60 ปี ขึ้นไป",
+                                                "มีความรู้ทางการเงินอย่างจำกัด",
+                                                "ไม่มีประสบการณ์การใช้ผลิตภัณฑ์",
+                                                "เป็นผู้บกพร่องทางกายหรือมีข้อจำกัดในการสื่อสาร"
+                                            ]
+                                        },
+                                        {
+                                            "title": "การให้บริการ",
+                                            "text": [ 
+                                            "แนะนำช้าๆ ให้ชัดเจนและเข้าใจ",
+                                            "สอบถามความต้องการในการให้ผู้ใกล้ชิดร่วมรับฟังข้อมูล",
+                                            "ให้ผู้จัดการหรือหัวหน้างานร่วมรับฟังการนำเสนอผลิตภัณฑ์",
+                                            "สำหรับผลิตภัณฑ์กองทุนและประกัน ให้แจ้งเตือนช้อควรระวังต่างๆ"
+                                            ]
+                                        }
+                                    ] 
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }                    
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "PUT"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/work-item/create"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "7G020022"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "itemId": "153265",
+                                    "status": 1, 
+                                    "stage": 1, 
+                                    "maker": "1xxxx", 
+                                    "createDt": "",
+                                    "updateDt": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

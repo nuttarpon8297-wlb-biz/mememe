@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "07b99766-76d4-4445-bc93-52d024429172",
+		"name": "open-account-success",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28179557"
+	},
+	"item": [
+		{
+			"name": "เข้าสู่ระบบ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/oauth/login",
+					"path": [
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงเมนูที่สามารถทำงานได้",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงข้อความเปราะบาง",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "สร้างไอดีเพื่อเก็บสถานะและข้อมูลที่จะเกิดขึ้น",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ตรวจสอบ-dopa",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ยืนยันรายการสมัครผลิตภัณฑ์",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงอีเมลและที่อยู่",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "สร้างเลขบัญชี",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงรายการบัญชีที่สมัครไว้ตาม-workitem",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "บันทึกลายเซ็น",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงรายการบัญชีและลายเซ็นที่สมัครไว้ตาม-workitem",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "สมัครผลิตภัณฑ์",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

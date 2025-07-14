@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "67e82480-2505-4a85-833b-61e56fa4c4fd",
+		"name": "signature-aiternative-serverrErrorแสดงอีเมลและที่อยู่",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28318159"
+	},
+	"item": [
+		{
+			"name": "แสดงอีเมลและที่อยู่",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 502\", function () {",
+							"    pm.response.to.have.status(502);",
+							"});",
+							"",
+							"pm.test(\"serviceCode= 503000E01\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(\"503000E01\");",
+							"",
+							"",
+							"});",
+							"",
+							"pm.test(\"serviceMessage = databaseException\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceMessage).to.eql(\"databaseException\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itemId\": 153123\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/get-account-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"get-account-info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

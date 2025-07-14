@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "9ca79e58-bbb9-43a0-bc32-2817897b9c2f",
+		"name": "signature-aiternative-serverrErrorสร้างเลขบัญชี",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28318159"
+	},
+	"item": [
+		{
+			"name": "แสดงอีเมลและที่อยู่",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"productNo= 001\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.accountList[0].productNo).to.eql(\"001\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"email = duangrat.n@mail.com\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.accountList[0].email).to.eql(\"duangrat.n@mail.com\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itemId\": 153261\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/get-account-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"get-account-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "สร้างเลขบัญชี",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 502\", function () {",
+							"    pm.response.to.have.status(502);",
+							"});",
+							"",
+							"pm.test(\"serviceCode= 503000E01\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(\"503000E01\");",
+							"",
+							"",
+							"});",
+							"",
+							"pm.test(\"serviceMessage = databaseException\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceMessage).to.eql(\"databaseException\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itemId\": 153261\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/product/generate-account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"generate-account"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

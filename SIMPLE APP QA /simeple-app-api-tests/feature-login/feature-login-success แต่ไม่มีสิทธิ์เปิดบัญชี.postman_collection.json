@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "1ebaca83-788f-4d5e-9c3e-f166525bdd04",
+		"name": "feature-login-success แต่ไม่มีสิทธิ์เปิดบัญชี",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28179557"
+	},
+	"item": [
+		{
+			"name": "เข้าสู่ระบบ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"ตรวจสอบชื่อผู้ใช้ = 21145788\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.userName).to.eql(\"21145788\");",
+							"});",
+							"",
+							"pm.test(\"ตรวจสอบชื่อผู้ใช้ = ไรยา\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.firstNameTh).to.eql(\"ไรยา\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"21145788\",\n    \"password\": \"@Krungsri879\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "แสดงเมนูที่สามารถทำงานได้",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"pm.test(\"serviceCode = 412000E01\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceCode).to.eql(\"412000E01\");",
+							"});",
+							"pm.test(\"serviceMessage = unauthourized\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.serviceMessage).to.eql(\"unauthourized\");",
+							"});",
+							"pm.test(\"Number of journeys is 0\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.journeys.length).to.eql(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"role\": \"DBBM\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/journeys/get-journeys",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"journeys",
+						"get-journeys"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

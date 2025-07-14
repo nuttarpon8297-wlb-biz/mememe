@@ -1,0 +1,985 @@
+{
+    "imposters": [
+        {
+            "port": 8080,
+            "protocol": "http",
+            "name": "product",
+            "stubs": [
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/oauth/login"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "7G020022",
+                                    "password": "@Krungsri002"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "accessToken": "",
+                                    "userName": "7G020022",
+                                    "prefixNameTh": "นางสาว",
+                                    "prefixNameEn": "Miss",
+                                    "firstNameTh": "สิริกัญญา",
+                                    "lastNameTh": "แสมสุข",
+                                    "firstNameEn": "Sirikanya",
+                                    "lastNameEn": "Seamsuk",
+                                    "role": "BW/STLA",
+                                    "positionEn": "Senior Relationship Manager 7",
+                                    "positionTh": "ผู้จัดการธุรกิจสัมพันธ์อาวุโส 7",
+                                    "branch": "778",
+                                    "email": "",
+                                    "tel": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/get-account-info"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                     "itemId": 153265
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {   "itemId": 153265,
+                                "accountList":[
+                                {    
+                                    "hash": "{hash}" ,
+                                    "productNo": "001",
+                                    "productName": "เงินฝาก",
+                                    "productType": "เงินฝากออมทรัพย์",
+                                    "accountType": "ออมทรัพย์ทั่วไป",
+                                    "addService": "Krungsri SMS Banking",
+                                    "accountName" :"ณัฐพนธ์ ยาคะธรรม",
+                                    "email": "duangrat.n@mail.com",
+                                    "address": {
+                                        "code": "ADDR03",
+                                        "building": "ตึกหรู",
+                                        "house_no": "999/99",
+                                        "moo":"9",
+                                        "road": "เรียบมาก",
+                                        "subDistrict": "คลองเตยเหนือ",
+                                        "district":"วัฒนา",
+                                        "province": "กทม",
+                                        "postalCode": "10100",
+                                        "country": "ประเทศไทย"
+                                    }
+                                },
+                                {
+                                    "hash": "{hash}",
+                                    "productNo": "001",
+                                    "productName": "เงินฝาก",
+                                    "productType": "เงินฝากออมทรัพย์",
+                                    "accountType": "ออมทรัพย์ทั่วไป",
+                                    "addService": "Krungsri SMS Banking",
+                                    "accountName": "ณัฐพนธ์ ยาคะธรรม",
+                                    "email": "duangrat.n@mail.com",
+                                    "address": {
+                                        "code": "ADDR03",
+                                        "building": "ตึกหรู",
+                                        "house_no": "999/99",
+                                        "moo":"9",
+                                        "road": "เรียบมาก",
+                                        "subDistrict": "คลองเตยเหนือ",
+                                        "district":"วัฒนา",
+                                        "province": "กทม",
+                                        "postalCode": "10100",
+                                        "country": "ประเทศไทย"
+                                    }
+                                },
+                                {
+                                    "hash": "{hash}",
+                                    "productName": "เงินฝาก",
+                                    "productType": "เงินฝากออมทรัพย์",
+                                    "accountType": "ออมทรัพย์ทั่วไป",
+                                    "addService": "Krungsri SMS Banking",
+                                    "accountName" :"ณัฐพนธ์ ยาคะธรรม",
+                                    "accountNo": "062-0-15256-3",
+                                    "email": "duangrat.n@mail.com",
+                                    "address": {
+                                        "code": "ADDR03",
+                                        "building": "ตึกหรู",
+                                        "house_no": "999/99",
+                                        "moo":"9",
+                                        "road": "เรียบมาก",
+                                        "subDistrict": "คลองเตยเหนือ",
+                                        "district":"วัฒนา",
+                                        "province": "กทม",
+                                        "postalCode": "10100",
+                                        "country": "ประเทศไทย"
+                                    }
+                                    
+                                }
+                                ]
+                            },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        },
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "accountList":[
+                                        {    
+                                            "seq": 1,
+                                            "acctType" : "ST",
+                                            "acctTypeName": "ออมทรัพย์ทั่วไป",
+                                            "acctName" : "ณัฐพนธ์ ยาคะธรรม",
+                                            "acctNo": "052015235",
+                                            "subService": [{
+                                                "id" : 1,
+                                                "name" : "Krungsri SMS Banking"
+                                            }]
+                                        },
+                                        {
+                                            "seq" : 2,
+                                            "acctType" : "SV",
+                                            "acctTypeName": "ออมทรัพย์ทั่วไป",
+                                            "acctName" :"ณัฐพนธ์ ยาคะธรรม",
+                                            "accountNo": "0620152563",
+                                            "subService": [{
+                                                "id" : 1,
+                                                "name" : "Krungsri SMS Banking"
+                                            }]
+                                        },
+                                        {
+                                            "seq" : 3,
+                                            "acctType" : "SV",
+                                            "acctTypeName": "ออมทรัพย์ทั่วไป",
+                                            "acctName" : "ณัฐพนธ์ ยาคะธรรม",
+                                            "acctNo": "0220152562",
+                                            "subService": [{
+                                                "id" : 1,
+                                                "name" : "Krungsri SMS Banking"
+                                            }]
+                                        }
+                                    ]
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        },
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "accountList":[
+                                    {    
+                                        "hash": "1",
+                                        "accountType": "ออมทรัพย์ทั่วไป",
+                                        "addService": "Krungsri SMS Banking",
+                                        "accountName" :"ณัฐพนธ์ ยาคะธรรม",
+                                        "accountNo": "052-0-1523-5",
+                                        "pictureSignature": "base64"
+                                    },
+                                    {
+                                        "hash": "2",
+                                        "accountType": "ออมทรัพย์ทั่วไป",
+                                        "addService": "Krungsri SMS Banking",
+                                        "accountName" : "ณัฐพนธ์ ยาคะธรรม",
+                                        "pictureSignature": "base64"
+                                    },
+                                    {
+                                        "hash": "3",
+                                        "accountType": "ออมทรัพย์ทั่วไป",
+                                        "addService": "Krungsri SMS Banking",
+                                        "accountName": "ณัฐพนธ์ ยาคะธรรม",
+                                        "accountNo": "062-0-15256-3",
+                                        "pictureSignature": "base64"
+                                        }
+                                    ]
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/generate-account"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153265
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "status": "success"
+                                    
+
+                                   
+                                   
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/generate-account"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153261
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 502,
+                                "body": {
+                                    "serviceCode": "503000E01",
+                                    "serviceMessage": "databaseException",
+                                    "serviceDateTime": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+
+
+
+
+                
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "PUT"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/product-signature"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "workitemId": 153265,
+                                    "hash": 1,
+                                    "flagAll": "Y",
+                                    "signImg": "base64"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "signResponse" : {
+                                        "hash" : 1,
+                                        "flagAll" : "Y",
+                                        "signStatus": "Y"
+                                    }
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "PUT"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/product-signature"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "workitemId": 153265,
+                                    "hash": 1,
+                                    "flagAll": "N",
+                                    "signImg1": "1base64",
+                                    "signImg2": "2base64",
+                                    "signImg3": "3base64"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "signResponse" : {
+                                        "hash" : 1,
+                                        "flagAll" : "N",
+                                        "signStatus1": "Y",
+                                        "signStatus2": "Y",
+                                        "signStatus3": "Y"
+                                    }
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+
+
+
+                
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "PUT"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/product-signature"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "workitemId": 153265,
+                                    "hash": 1,
+                                    "flagAll": "Y",
+                                    "signImg": "No"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 400,
+                                "body": {
+                                    "serviceCode": 1,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "signResponse" : {
+                                        "hash" : 1,
+                                        "flagAll" : "Y",
+                                        "signStatus": "No"
+                                    }
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+                
+
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "PUT"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/register"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153265
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    
+                                        "serviceCode": 0,
+                                        "serviceMessage": "",
+                                        "serviceDateTime": "",
+                                        "productRegisterStatus": "Success"
+                                    
+
+                                   
+                                   
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+                 
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153265,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                        "smartCardNumber": "10994078533",
+                                        "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                        "firstName": "ชื่อภาษาไทย",
+                                        "lastName": "นามสกุลภาษาไทย",
+                                        "birthDate": "25400119",
+                                        "laserId": "JT0123456789"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    
+                                    "serviceCode": "2xx101E00",
+                                    "serviceMessage": "สถาณะบัตรปกติ",
+                                    "dopaVerify": {
+                                    "identificationVerification": "SUCC",
+                                    "expiredCardIndicator": false}
+
+                                   
+                                   
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153264,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                        "smartCardNumber": "10994078533",
+                                        "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                        "firstName": "ชื่อภาษาไทย",
+                                        "lastName": "นามสกุลภาษาไทย",
+                                        "birthDate": "25400119",
+                                        "laserId": "JT0123456789"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    
+                                    "serviceCode": "2xx101E01",
+                                    "serviceMessage": "ข้อมูลบัตรไม่ถูกต้อง",
+                                    "dopaVerify": {
+                                    "identificationVerification": "FAIL",
+                                    "expiredCardIndicator": false}
+
+                                   
+                                   
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153262,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                        "smartCardNumber": "10994078533",
+                                        "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                        "firstName": "ชื่อภาษาไทย",
+                                        "lastName": "นามสกุลภาษาไทย",
+                                        "birthDate": "25400119",
+                                        "laserId": "JT0123456789"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 503,
+                                "body": {
+                                    
+                                    "serviceCode": "5xx101E10",
+                                    "serviceMessage": "Cannot connect to backend",
+                                    "serviceDateTime": ""
+
+                                   
+                                   
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153261,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                        "smartCardNumber": "10994078533",
+                                        "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                        "firstName": "ชื่อภาษาไทย",
+                                        "lastName": "นามสกุลภาษาไทย",
+                                        "birthDate": "25400119",
+                                        "laserId": "JT0123456789"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 503,
+                                "body": {
+                                    
+                                    "serviceCode": "5xx101E15",
+                                    "serviceMessage": "apiFactoryServiceUnavailable",
+                                    "serviceDateTime": ""
+
+                                   
+                                   
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+
+
+
+
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/get-account-info"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    
+                                        "itemId": 153123
+                                    
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 502,
+                                "body": {
+                                    
+                                    "serviceCode": "503000E01",
+                                    "serviceMessage": "databaseException",
+                                     "serviceDateTime": ""
+
+                                   
+                                   
+                                   
+                                    
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+
+
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/product/get-account-info"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    
+                                        "itemId": 153261
+                                    
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "itemId": 153261,
+                                    "accountList": [
+                                        {
+                                            "hash": "{hash}",
+                                            "productNo": "001",
+                                            "productName": "เงินฝาก",
+                                            "productType": "เงินฝากออมทรัพย์",
+                                            "accountType": "ออมทรัพย์ทั่วไป",
+                                            "addService": "Krungsri SMS Banking",
+                                            "accountName": "ณัฐพนธ์ ยาคะธรรม",
+                                            "email": "duangrat.n@mail.com",
+                                            "address": {
+                                                "code": "ADDR03",
+                                                "building": "ตึกหรู",
+                                                "house_no": "999/99",
+                                                "moo": "9",
+                                                "road": "เรียบมาก",
+                                                "subDistrict": "คลองเตยเหนือ",
+                                                "district": "วัฒนา",
+                                                "province": "กทม",
+                                                "postalCode": "10100",
+                                                "country": "ประเทศไทย"
+                                            }
+                                        },
+                                        {
+                                            "hash": "{hash}",
+                                            "productNo": "001",
+                                            "productName": "เงินฝาก",
+                                            "productType": "เงินฝากออมทรัพย์",
+                                            "accountType": "ออมทรัพย์ทั่วไป",
+                                            "addService": "Krungsri SMS Banking",
+                                            "accountName": "ณัฐพนธ์ ยาคะธรรม",
+                                            "email": "duangrat.n@mail.com",
+                                            "address": {
+                                                "code": "ADDR03",
+                                                "building": "ตึกหรู",
+                                                "house_no": "999/99",
+                                                "moo": "9",
+                                                "road": "เรียบมาก",
+                                                "subDistrict": "คลองเตยเหนือ",
+                                                "district": "วัฒนา",
+                                                "province": "กทม",
+                                                "postalCode": "10100",
+                                                "country": "ประเทศไทย"
+                                            }
+                                        },
+                                        {
+                                            "hash": "{hash}",
+                                            "productName": "เงินฝาก",
+                                            "productType": "เงินฝากออมทรัพย์",
+                                            "accountType": "ออมทรัพย์ทั่วไป",
+                                            "addService": "Krungsri SMS Banking",
+                                            "accountName": "ณัฐพนธ์ ยาคะธรรม",
+                                            "accountNo": "062-0-15256-3",
+                                            "email": "duangrat.n@mail.com",
+                                            "address": {
+                                                "code": "ADDR03",
+                                                "building": "ตึกหรู",
+                                                "house_no": "999/99",
+                                                "moo": "9",
+                                                "road": "เรียบมาก",
+                                                "subDistrict": "คลองเตยเหนือ",
+                                                "district": "วัฒนา",
+                                                "province": "กทม",
+                                                "postalCode": "10100",
+                                                "country": "ประเทศไทย"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                }
+
+            ]
+        }
+    ]
+}

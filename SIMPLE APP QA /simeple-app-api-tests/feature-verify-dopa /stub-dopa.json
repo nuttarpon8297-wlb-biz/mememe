@@ -1,0 +1,434 @@
+{
+    "imposters": [
+        {
+            "port": 8080,
+            "protocol": "http",
+            "name": "dopaVerify",
+            "stubs": [
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/oauth/login"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "7G020022",
+                                    "password": "@Krungsri002"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "accessToken": "",
+                                    "userName": "7G020022",
+                                    "prefixNameTh": "นางสาว",
+                                    "prefixNameEn": "Miss",
+                                    "firstNameTh": "สิริกัญญา",
+                                    "lastNameTh": "แสมสุข",
+                                    "firstNameEn": "Sirikanya",
+                                    "lastNameEn": "Seamsuk",
+                                    "role": "BW/STLA",
+                                    "positionEn": "Senior Relationship Manager 7",
+                                    "positionTh": "ผู้จัดการธุรกิจสัมพันธ์อาวุโส 7",
+                                    "branch": "778",
+                                    "email": "",
+                                    "tel": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/journeys/get-journeys"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "role": "BW/STLA"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+    
+                                    "serviceCode": 0,
+                                    "serviceMessage":"",
+                                    "serviceDateTime":"",
+                                    "journeys":[
+                                        {
+                                            "id": "1",
+                                            "journeyName": "เริ่มเปิดบัญชี",
+                                            "journeyRoutingName": "productOnBoarding"
+                                        }
+                                    ]
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "PUT"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/work-item/create"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "username": "7G020022"
+                                }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {
+                                    "serviceCode": 0,
+                                    "serviceMessage": "",
+                                    "serviceDateTime": "",
+                                    "itemId": "153265",
+                                    "status": 1, 
+                                    "stage": 1, 
+                                    "maker": "1xxxx", 
+                                    "createDt": "",
+                                    "updateDt": ""
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153265,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                      "smartCardNumber": "10994078533",
+                                      "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                      "firstName": "ณัฐพนธ์",
+                                      "lastName": "ยาคะธรรม",
+                                      "birthDate": "25400119",
+                                      "laserId": "JT0123456789"
+                                    }
+                                  }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {                                   
+                                        "serviceCode": "2xx101E00",
+                                        "serviceMessage": "สถาณะบัตรปกติ",
+                                         "dopaVerify": {
+                                            "identificationVerification": "SUCC",
+                                            "expiredCardIndicator": false
+                                         }                                   
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153265,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                      "smartCardNumber": "10994078533",
+                                      "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                      "firstName": "พานเทพ",
+                                      "lastName": "ยาคะธรรม",
+                                      "birthDate": "25400119",
+                                      "laserId": "JT0123456789"
+                                    }
+                                  }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {                                   
+                                    "serviceCode": "2xx101E01",
+                                    "serviceMessage": "ข้อมูลบัตรไม่ถูกต้อง",
+                                     "dopaVerify": {
+                                        "identificationVerification": "FAIL",
+                                        "expiredCardIndicator": false
+                                         }                                   
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153242,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                      "smartCardNumber": "10994078533",
+                                      "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                      "firstName": "รจนา",
+                                      "lastName": "ยาคะธรรม",
+                                      "birthDate": "25400119",
+                                      "laserId": "JT0123456789"
+                                    }
+                                  }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 200,
+                                "body": {                                   
+                                    "serviceCode": "2xx101E01.1",
+                                    "serviceMessage": "บัตรหมดอายุ",
+                                     "dopaVerify": {
+                                        "identificationVerification": "FAIL",
+                                        "expiredCardIndicator": true
+                                         }                                   
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153296,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                      "smartCardNumber": "10994078533",
+                                      "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                      "firstName": "โรนัลโด้",
+                                      "lastName": "ยาคะธรรม",
+                                      "birthDate": "25400119",
+                                      "laserId": "JT0123456789"
+                                    }
+                                  }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 503,
+                                "body": {                                   
+                                    "serviceCode": "5xx101E10",
+                                    "serviceMessage": "Cannot connect to backen",
+                                     "dopaVerify": {
+                                        "identificationVerification": "FAIL",
+                                        "expiredCardIndicator": true
+                                         }                                   
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                },
+                {
+                    "predicates": [
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "method": "POST"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "deepEquals": {
+                                "path": "/api/v1/dopa/verify"
+                            }
+                        },
+                        {
+                            "caseSensitive": true,
+                            "equals": {
+                                "body": {
+                                    "itemId": 153242,
+                                    "identificationNumber": "1101401845093",
+                                    "chipInformation": {
+                                      "smartCardNumber": "10994078533",
+                                      "petitionDocumentNumber": "6300c10e142f2698"
+                                    },
+                                    "cardInformation": {
+                                      "firstName": "รจนาปมาจิก",
+                                      "lastName": "ยาคะธรรม",
+                                      "birthDate": "25400119",
+                                      "laserId": "JT0123456789"
+                                    }
+                                  }
+                            }
+                        }
+                    ],
+                    "responses": [
+                        {
+                            "is": {
+                                "statusCode": 503,
+                                "body": {                                   
+                                    "serviceCode": "5xx101E15",
+                                    "serviceMessage": "apiFactoryServiceUnavailable"                                  
+                                },
+                                "_mode": "text",
+                                "_proxyResponseTime": 451
+                            },
+                            "_behaviors": {
+                                "wait": 451
+                            }
+                        }
+                    ]
+                }    
+            ]
+        }
+    ]
+}
